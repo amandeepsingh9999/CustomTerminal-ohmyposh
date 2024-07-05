@@ -47,3 +47,20 @@ Now we will edit the line we have added in the step - 3 and make it look like so
 eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/base.json)"
 ```
 escape the neovim using `Esc` key and then pressing `:wq`
+
+# Now how will you be able to choose theme for your terminal 
+
+For first thing when you open your terminal you will be greeted with new terminal theme
+
+
+![alt](Assets/Images/Screenshot_05-Jul_22-53-40_23117.png)
+
+Now i will tell you that how you can change yours first Go to this link and select any theme you like 
+
+[Terminal theme](https://ohmyposh.dev/docs/themes)
+
+then tap on its name to go to its github page and copy the json text of your suitable theme , now open `.config/ohmyposh/base.json` select all text and delete it then paste what you have copied in that file then jsut run this command so that it can apply to your terminal
+
+```
+source .zshrc
+```
