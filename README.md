@@ -81,6 +81,3 @@ To change the theme, follow these steps:
     ```
 
 Enjoy your newly themed terminal! 🎉
-```
-
-This `README.md` file now includes emojis for better readability and engagement, corrected grammar, and a structured format for easy following.
