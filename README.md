@@ -1,66 +1,86 @@
 # CustomTerminal-ohmyposh
-> This Installation is only for linux if you wanna know about your os just comment .
+> This installation guide is for Linux. If you're unsure about your operating system, please leave a comment.
 
-## To Install Oh My Posh , Follow these:
-1. Install .NET SDK, 
-OhMyPosh is built on .NET 
+## 🚀 How to Install Oh My Posh
 
-```
+### Step 1: Install .NET SDK
+Oh My Posh is built on .NET, so you need to install the .NET SDK first.
+
+```bash
 sudo apt update
 sudo apt install -y dotnet-sdk-6.0
 ```
 
-2. Now Download and Install OhMyPosh 
-```
+### Step 2: Download and Install Oh My Posh
+```bash
 sudo wget https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/posh-linux-amd64 -O /usr/local/bin/oh-my-posh
 sudo chmod +x /usr/local/bin/oh-my-posh
-
 ```
 
-3. Configure your shell with OhMyPosh\
-If you are using Bash Follow this :
-```
+### Step 3: Configure Your Shell with Oh My Posh
+#### For Bash:
+```bash
 echo 'eval "$(oh-my-posh init bash)"' >> ~/.bashrc
 source ~/.bashrc
 ```
-If you are using Zsh follow this :
-```
+
+#### For Zsh:
+```bash
 echo 'eval "$(oh-my-posh init zsh)"' >> ~/.zshrc
 source ~/.zshrc
 ```
-4. Because oh-my-posh does not have any config file we will create one 
+
+### Step 4: Create a Configuration Directory for Oh My Posh
+```bash
+mkdir -p ~/.config/ohmyposh
+cd ~/.config/ohmyposh
 ```
-mkdir .config/ohmyposh
-cd .config/ohmyposh
-```
-5. Now we will import the base configuration 
-```
+
+### Step 5: Import the Base Configuration
+```bash
 oh-my-posh config export --output ./base.json
 ```
-6. You can say that it is the final step but there more<br>
-Now you will open neovim or your favorite text editor 
+
+### Step 6: Edit Your Shell Configuration
+Open your favorite text editor, such as Neovim, and edit the configuration line added in step 3.
+
+```bash
+nvim ~/.zshrc
 ```
-nvim .zshrc
-```
-Now we will edit the line we have added in the step - 3 and make it look like something like this
-```
+
+Change the line to:
+
+```bash
 eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/base.json)"
 ```
-escape the neovim using `Esc` key and then pressing `:wq`
 
-# Now how will you be able to choose theme for your terminal 
+Save and exit the editor by pressing `Esc` and then typing `:wq`.
 
-For first thing when you open your terminal you will be greeted with new terminal theme
+## 🎨 How to Choose a Theme for Your Terminal
 
+When you open your terminal, you will be greeted with a new terminal theme.
 
-![alt](Assets/Images/Screenshot_05-Jul_22-53-40_23117.png)
+![Terminal Screenshot](Assets/Images/Screenshot_05-Jul_22-53-40_23117.png)
 
-Now i will tell you that how you can change yours first Go to this link and select any theme you like 
+To change the theme, follow these steps:
 
-[Terminal theme](https://ohmyposh.dev/docs/themes)
+1. Visit the [Oh My Posh Themes](https://ohmyposh.dev/docs/themes) page and select a theme you like.
+2. Click on the theme's name to go to its GitHub page.
+3. Copy the JSON text of your chosen theme.
+4. Open the configuration file:
 
-then tap on its name to go to its github page and copy the json text of your suitable theme , now open `.config/ohmyposh/base.json` select all text and delete it then paste what you have copied in that file then jsut run this command so that it can apply to your terminal
+    ```bash
+    nvim ~/.config/ohmyposh/base.json
+    ```
 
+5. Replace all the text in `base.json` with the JSON text you copied.
+6. Apply the new theme:
+
+    ```bash
+    source ~/.zshrc
+    ```
+
+Enjoy your newly themed terminal! 🎉
 ```
-source .zshrc
-```
+
+This `README.md` file now includes emojis for better readability and engagement, corrected grammar, and a structured format for easy following.
